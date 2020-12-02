@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/stylesheet.css"/>
+    <style>
+        canvas {
+            margin: 0 auto;
+            direction: rtl;
+        }
+    </style>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+        families: ['Cairo']
+        }
+    });
+    </script>
+    
+    <script type="text/javascript" src="js/phaser.min.js"></script>
+    <script type="text/javascript" src="js/boot.js?3"></script>
+    <script type="text/javascript" src="js/preload.js?56"></script>
+    <script type="text/javascript" src="js/maingame.js?2"></script>
+    <script type="text/javascript" src="js/endscreen.js?9"></script>
+    
+    <script type="text/javascript">
+        var game;
+
+        (function () {
+
+            game = new Phaser.Game(2232, 1256, Phaser.CANVAS, 'gamecanvas', null, true);
+            // game = new Phaser.Game(2232, 1256 + 124, Phaser.CANVAS, 'gamecanvas', null, true);
+
+            //Add all states
+            game.state.add("Boot", Boot);
+            game.state.add("Preload", Preload);
+            game.state.add("Maingame", Maingame);
+            game.state.add("Endscreen", Endscreen);
+
+            //Start the first state
+            game.state.start("Boot");
+
+        })();
+
+    </script>
+</head>
+
+<body>
+</body>
+</html>
